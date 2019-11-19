@@ -8,7 +8,7 @@ class PlayerTest extends TestCase
     
     public function shouldGetPlayerName()
     {
-        $sut = new Player("Kalle");
+        $sut = new \model\Player("Kalle");
      
         $actual = $sut->getPlayerName();
         $expected = "Kalle";
