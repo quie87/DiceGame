@@ -1,5 +1,7 @@
 <?php
 
+use PHPUnit\Framework\Constraint\StringContains;
+
 class Player
 {
     private $name;

@@ -15,4 +15,13 @@ class PlayerTest extends TestCase
      
         $this->assertEquals($actual, $expected);
     }
+
+    /** @test */
+
+    public function shouldThrowErrorIfWrongInputToConstructor()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        
+        new Player(2);
+    }
 }
