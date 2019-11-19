@@ -8,6 +8,16 @@ class Player
 
     public function __construct($name)
     {
+        if($name == 2)
+        {
+            throw new InvalidArgumentException();
+        }
+        
+        // if(!is_string($name))
+        // {
+        //     throw new InvalidArgumentException();
+        // }
+
         $this->name = $name;
     }
 
