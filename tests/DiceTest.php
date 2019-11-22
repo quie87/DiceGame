@@ -20,7 +20,7 @@ class DiceTest extends TestCase
 
     public function shouldThrowErrorIfInputToConstructorIsNotAValidTypeOfDice()
     {
-        $this->expectException(InvalidTypeOfDice::class);
+        $this->expectException(NotAValidTypeOfDiceException::class);
         $input = 2;
         $input2 = 5;
 
