@@ -6,7 +6,7 @@ class PlayerTest extends TestCase
 {
     /** @test */
     
-    public function shouldGetPlayerName()
+    public function should_Get_PlayerName()
     {
         $sut = new Player("Kalle");
      
@@ -18,7 +18,7 @@ class PlayerTest extends TestCase
 
     /** @test */
 
-    public function shouldThrowErrorIfWrongInputToConstructor()
+    public function should_Throw_Error_If_Input_To_Constructor_Is_Not_A_String()
     {
         $this->expectException(InvalidArgumentException::class);
         
