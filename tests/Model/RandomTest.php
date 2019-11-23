@@ -7,8 +7,8 @@ class RandomTest extends TestCase
     /** @test */
     public function should_return_a_interger()
     {
-        $sut = new RandomNumber();
-        $actual = $sut->getRandomNumber(6);
+        $sut = new RandomNumber(6);
+        $actual = $sut->getRandomNumber();
 
         $this->assertIsNumeric($actual);
     }
