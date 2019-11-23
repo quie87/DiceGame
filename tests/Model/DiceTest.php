@@ -36,4 +36,22 @@ class DiceTest extends TestCase
 
         $this->assertEquals($actual, $expected);
     }
+
+    /** @test */
+    public function should_roll_dice()
+    {
+        $randomMock = $this->getMockBuilder("RandomNumber")
+            ->setConstructorArgs([12])
+            ->setMethods(["getRandomNumber"])
+            ->getMock();
+
+        $randomMock->method("getRandomNumber")
+            ->willReturn(4);
+
+        $sut = new Dice(12, $randomMock);
+        $actual = $sut->Roll();
+        $expected = 4;
+
+        $this->assertEquals($actual, $expected);
+    }
 }
