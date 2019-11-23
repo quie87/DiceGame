@@ -5,7 +5,9 @@ class Dice
     private $value;
     private $validAmountOfSidesOnDice = array(4, 6, 8, 10, 12, 20);
     
-    public function __construct($value)
+    private $random;
+    
+    public function __construct($value, RandomNumber $random)
     {
         if(!is_numeric($value))
         {
@@ -18,10 +20,16 @@ class Dice
         }
 
         $this->value = $value;
+        $this->random = $random;
     }
 
     public function getDiceValue()
     {
         return $this->value;
+    }
+
+    public function Roll ()
+    {
+        return $this->random->getRandomNumber();
     }
 }
