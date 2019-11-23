@@ -19,4 +19,9 @@ class Dice
 
         $this->value = $value;
     }
+
+    public function getDiceValue()
+    {
+        return $this->value;
+    }
 }

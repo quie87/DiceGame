@@ -27,12 +27,12 @@ class DiceTest extends TestCase
     }
 
     /** @test */
-    public function should_return_face_value()
+    public function should_return_dice_value()
     {
         $expected = 6;
         $sut = new Dice(6);
 
-        $actual = $sut->getFaceValue();
+        $actual = $sut->getDiceValue();
 
         $this->assertEquals($actual, $expected);
     }
