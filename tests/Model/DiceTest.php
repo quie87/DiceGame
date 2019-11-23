@@ -26,18 +26,20 @@ class DiceTest extends TestCase
     public function should_Throw_Error_If_Input_To_Constructor_Is_Not_A_Valid_Type_Of_Dice()
     {
         $this->expectException(NotAValidTypeOfDiceException::class);
-        $input = 2;
-        $input2 = 5;
+        $sidesOfDice = 2;
+        $sidesOfDice2 = 5;
 
-        new Dice($input, $this->randomNumber);
-        new Dice($input2, $this->randomNumber);
+        new Dice($sidesOfDice, $this->randomNumber);
+        new Dice($sidesOfDice2, $this->randomNumber);
     }
 
     /** @test */
     public function should_return_dice_value()
     {
-        $sut = new Dice(6, $this->randomNumber);
-        $expected = 6;
+        $sidesOfDice = 6;
+
+        $sut = new Dice($sidesOfDice, $this->randomNumber);
+        $expected = $sidesOfDice;
         $actual = $sut->getDiceValue();
 
         $this->assertEquals($actual, $expected);
@@ -46,16 +48,18 @@ class DiceTest extends TestCase
     /** @test */
     public function should_roll_dice()
     {
+        $sidesOfDice = 12;
+
         $randomMock = $this->getMockBuilder("RandomNumber")
-        ->setConstructorArgs([12])
+        ->setConstructorArgs([$sidesOfDice])
         ->setMethods(["getRandomNumber"])
         ->getMock();
         
         $randomMock->method("getRandomNumber")
         ->willReturn(4);
         
-        $sut = new Dice(12, $randomMock);
-        $actual = $sut->Roll();
+        $sut = new Dice($sidesOfDice, $randomMock);
+        $actual = $sut->roll();
         $expected = 4;
 
         $this->assertEquals($actual, $expected);

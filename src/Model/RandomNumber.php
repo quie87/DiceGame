@@ -8,6 +8,7 @@ class RandomNumber
     {
         $this->number = $number;
     }
+    
     public function getRandomNumber() : int
     {
         return rand(1, $this->number);

@@ -28,7 +28,7 @@ class Dice
         return $this->value;
     }
 
-    public function Roll ()
+    public function roll ()
     {
         return $this->random->getRandomNumber();
     }
