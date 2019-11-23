@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 class DiceTest extends TestCase
 {
+    protected $randomNumber;
     /** @test */
 
     public function should_Throw_Error_If_Input_To_Constructor_Is_Not_A_Number()
