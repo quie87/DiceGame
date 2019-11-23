@@ -12,14 +12,4 @@ class RandomTest extends TestCase
 
         $this->assertIsNumeric($actual);
     }
-
-    /** @test */
-    public function should_throw_exception_if_not_a_number()
-    {
-        $this->expectException(NotANumberException::class);
-        $input = "A string";
-
-        $sut = new RandomNumber();
-        $sut->getRandomNumber($input);
-    }
 }
