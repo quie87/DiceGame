@@ -29,9 +29,8 @@ class DiceTest extends TestCase
     /** @test */
     public function should_return_dice_value()
     {
-        $expected = 6;
         $sut = new Dice(6);
-
+        $expected = 6;
         $actual = $sut->getDiceValue();
 
         $this->assertEquals($actual, $expected);
