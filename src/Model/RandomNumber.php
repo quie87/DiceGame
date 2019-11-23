@@ -2,8 +2,14 @@
 
 class RandomNumber
 {
-    public function getRandomNumber(int $number) : int
+    private $number;
+
+    public function __construct(int $number)
     {
-        return rand(1, $number);
+        $this->number = $number;
+    }
+    public function getRandomNumber() : int
+    {
+        return rand(1, $this->number);
     }
 }
