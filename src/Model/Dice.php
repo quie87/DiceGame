@@ -7,7 +7,7 @@ class Dice
     
     private $random;
     
-    public function __construct($value, RandomNumber $random)
+    public function __construct($value, $random)
     {
         if(!is_numeric($value))
         {

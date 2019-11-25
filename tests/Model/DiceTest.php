@@ -50,14 +50,12 @@ class DiceTest extends TestCase
     {
         $sidesOfDice = 12;
 
-        $randomMock = $this->getMockBuilder("RandomNumber")
-        ->setConstructorArgs([$sidesOfDice])
-        ->setMethods(["getRandomNumber"])
-        ->getMock();
-        
-        $randomMock->method("getRandomNumber")
-        ->willReturn(4);
-        
+        $randomMock = $this->createMock(RandomNumber::class);
+
+        $randomMock
+            ->method('getRandomNumber')
+            ->willReturn(4);
+
         $sut = new Dice($sidesOfDice, $randomMock);
         $actual = $sut->roll();
         $expected = 4;
